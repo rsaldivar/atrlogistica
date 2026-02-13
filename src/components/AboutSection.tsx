@@ -1,5 +1,8 @@
 import { Truck, Package, Clock, Shield } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import about1 from "@/assets/about-1.jpg";
+import about2 from "@/assets/about-2.jpg";
+import about3 from "@/assets/about-3.jpg";
 
 const features = [
   {
@@ -24,13 +27,21 @@ const features = [
   },
 ];
 
+const galleryImages = [
+  { src: about1, alt: "Unidad de transporte en zona industrial" },
+  { src: about2, alt: "Flota de camiones en centro de distribución" },
+  { src: about3, alt: "Tráiler en punto de carga" },
+];
+
 const AboutSection = () => {
   const header = useScrollReveal();
   const cards = useScrollReveal(0.1);
+  const gallery = useScrollReveal(0.1);
 
   return (
     <section id="nosotros" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
+        {/* Header */}
         <div
           ref={header.ref}
           className={`text-center mb-16 transition-all duration-700 ${
@@ -48,6 +59,29 @@ const AboutSection = () => {
           </p>
         </div>
 
+        {/* Gallery */}
+        <div
+          ref={gallery.ref}
+          className={`grid md:grid-cols-3 gap-4 mb-16 transition-all duration-700 ${
+            gallery.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          {galleryImages.map((img, i) => (
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden shadow-lg group"
+              style={{ transitionDelay: gallery.visible ? `${i * 150}ms` : "0ms" }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Service cards */}
         <div
           ref={cards.ref}
           id="servicios"
