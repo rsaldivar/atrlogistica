@@ -1,4 +1,5 @@
 import { Truck, Package, Clock, Shield } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const features = [
   {
@@ -24,10 +25,18 @@ const features = [
 ];
 
 const AboutSection = () => {
+  const header = useScrollReveal();
+  const cards = useScrollReveal(0.1);
+
   return (
     <section id="nosotros" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div
+          ref={header.ref}
+          className={`text-center mb-16 transition-all duration-700 ${
+            header.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
             Quiénes Somos
           </h2>
@@ -39,11 +48,20 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div id="servicios" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((f) => (
+        <div
+          ref={cards.ref}
+          id="servicios"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {features.map((f, i) => (
             <div
               key={f.title}
-              className="bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow group"
+              className={`bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-700 group ${
+                cards.visible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: cards.visible ? `${i * 150}ms` : "0ms" }}
             >
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
                 <f.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />

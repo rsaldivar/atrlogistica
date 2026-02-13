@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const testimonials = [
   {
@@ -22,21 +23,32 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const header = useScrollReveal();
+  const cards = useScrollReveal(0.1);
+
   return (
     <section id="clientes" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div
+          ref={header.ref}
+          className={`text-center mb-16 transition-all duration-700 ${
+            header.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-extrabold text-secondary-foreground mb-4">
             Lo Que Dicen Nuestros Clientes
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
+        <div ref={cards.ref} className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="bg-secondary-foreground/5 backdrop-blur rounded-xl p-8 border border-secondary-foreground/10 hover:border-primary/50 transition-colors"
+              className={`bg-secondary-foreground/5 backdrop-blur rounded-xl p-8 border border-secondary-foreground/10 hover:border-primary/50 transition-all duration-700 ${
+                cards.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: cards.visible ? `${i * 200}ms` : "0ms" }}
             >
               <Quote className="w-8 h-8 text-primary mb-4" />
               <p className="text-secondary-foreground/80 mb-6 leading-relaxed italic">
