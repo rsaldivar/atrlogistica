@@ -1,73 +1,74 @@
 # Welcome to your Lovable project
 
-## Project info
+prompt
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Quiero que me ayudes hacer la pagina web :
 
-## How can I edit this code?
 
-There are several ways of editing your application.
 
-**Use Lovable**
+Crea una réplica fiel en HTML5 + CSS3 (y algo de JavaScript vanilla si es necesario para carrusel simple) de la página principal de https://jumbocel.com/, empresa de empaques flexibles de polipropileno (super sacos, etc.).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Usa esta estructura y estilo exacto basado en la descripción:
 
-Changes made via Lovable will be committed automatically to this repo.
+- Colores: rojo principal (#c8102e o #d32f2f), azul corporativo (#003087), blanco, gris claro.
 
-**Use your preferred IDE**
+- Fuentes: sans-serif moderna (Roboto o Open Sans para body, bold para títulos).
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Responsive: mobile-first, grid/flexbox.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Header sticky con logo + menú horizontal (Inicio | Nosotros | Nuestras Productos | Contactos).
 
-Follow these steps:
+- Hero: full-width background image industrial (usa placeholder https://via.placeholder.com/1920x800?text=Super+Sacos+Industria), overlay oscuro 40%, título grande blanco centrado "Líderes en el diseño y fabricación de Empaques Flexibles de Polipropileno.", botón rojo "Conoce más".
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Sección roja: texto blanco + botón azul "Acerca de JUMBOPACK".
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Sección azul estadísticas: números grandes 25 años, 24 países, 350 clientes + foto planta a la derecha.
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Nuestra promesa: caja centrada con botón rojo "Solicita Una Cotización".
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- Industrias: grid o swiper de 6-8 imágenes pequeñas con labels (Construcción, Minería, etc.).
 
-**Edit a file directly in GitHub**
+- Marcas grupo: carrusel horizontal de logos (4-6 logos placeholders).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Modelo de negocio: fondo azul, 4 columnas con íconos + texto (Soluciones a la Medida, Calidad Mundial, etc.) + botón rojo.
 
-**Use GitHub Codespaces**
+- Instalaciones: foto grande de planta + texto.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Catálogo: sección grid 4 cards productos (Super Sacos, Sacos, Fundas, Eslingas) con imágenes placeholders y botón "Ver productos".
 
-## What technologies are used for this project?
+- Noticias: 3 cards noticias con imágenes + títulos.
 
-This project is built with:
+- Contacto: fondo azul, formulario izquierda (Nombre, Email, Mensaje, botón Enviar rojo), info contacto derecha (teléfonos MX/USA, email, dirección Apodaca NL).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Footer: logo, enlaces, contacto.
 
-## How can I deploy this project?
+- Agrega botón flotante WhatsApp verde esquina inferior derecha (link wa.me/...).
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Usa placeholders para imágenes (via.placeholder.com con texto descriptivo).
 
-## Can I connect a custom domain to my Lovable project?
+- Hazlo limpio, profesional, B2B industrial.
 
-Yes, you can!
+Genera el código completo en un solo archivo HTML con <style> interno y <script> si hace falta.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+
+
+Contiene animaciones,
+
+
+Voy a crear una landing page profesional para ATR Logística con estética industrial/logística en tonos blanco y azul, inspirada en Grupo JumboCel. Incluiré: hero con slider, quiénes somos, testimonios de clientes y contacto.
+
+¡Tu landing page de ATR Logística está lista! Incluye:
+
+Navbar fija con logo y navegación responsive
+Hero Slider con 3 imágenes de logística y transición automática
+Quiénes Somos con descripción y 4 tarjetas de servicios
+Testimonios de clientes satisfechos
+Contacto con información y formulario
+Footer con logo y copyright
+
+ Se agregó el mapa de Google Maps centrado en Apodaca, Nuevo León y animaciones de aparición al hacer scroll (fade-in con desplazamiento) en las secciones de Quiénes Somos, Testimonios y Contacto, con efecto escalonado en las tarjetas.
+
+ Agrega un botón de WhatsApp flotante para contacto rápido
+
