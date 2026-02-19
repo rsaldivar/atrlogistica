@@ -28,9 +28,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="#inicio" className="flex items-center gap-2">
-          <img src={logo} alt="STR Logística" className="h-12 w-auto rounded" />
+          <img src={logo} alt="ATR Logística" className="h-12 w-auto rounded" />
           <span className="text-xl font-bold text-primary-foreground tracking-tight">
-            STR Logística
+            ATR Logística
           </span>
         </a>
 
