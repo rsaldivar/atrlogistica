@@ -53,7 +53,7 @@ const AboutSection = () => {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6" />
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg leading-relaxed">
-            En <strong className="text-foreground">STR Logística</strong> somos líderes en soluciones
+            En <strong className="text-foreground">ATR Logística</strong> somos líderes en soluciones
             de transporte y logística. Con más de 15 años de experiencia, ofrecemos servicios
             integrales que garantizan la eficiencia y seguridad de tu cadena de suministro.
           </p>
