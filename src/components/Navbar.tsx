@@ -1,13 +1,37 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope } from "react-icons/fa";
 import logo from "@/assets/logo-atr.jpg";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
-  { label: "Quiénes Somos", href: "#nosotros" },
+  { label: "Quienes Somos", href: "#nosotros" },
   { label: "Servicios", href: "#servicios" },
   { label: "Clientes", href: "#clientes" },
   { label: "Contacto", href: "#contacto" },
+];
+
+const socialLinks = [
+  {
+    icon: <FaLinkedin size={17} />,
+    href: "https://www.linkedin.com/in/atr-logistics-26146b3b0/",
+    label: "LinkedIn",
+  },
+  {
+    icon: <FaInstagram size={17} />,
+    href: "https://www.instagram.com/atr_logistics_mty",
+    label: "Instagram",
+  },
+  {
+    icon: <FaFacebook size={17} />,
+    href: "https://www.facebook.com/share/1LKFKgQjq3/",
+    label: "Facebook",
+  },
+  {
+    icon: <FaEnvelope size={17} />,
+    href: "mailto:atrlogisticsmx@gmail.com",
+    label: "Email",
+  },
 ];
 
 const Navbar = () => {
@@ -28,25 +52,42 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="#inicio" className="flex items-center gap-2">
-          <img src={logo} alt="ATR Logística" className="h-12 w-auto rounded" />
+          <img src={logo} alt="ATR Logistica" className="h-12 w-auto rounded" />
           <span className="text-xl font-bold text-primary-foreground tracking-tight">
-            ATR Logística
+            ATR Logistica
           </span>
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-sm font-medium text-secondary-foreground/80 hover:text-primary transition-colors"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {navLinks.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="text-sm font-medium text-secondary-foreground/80 hover:text-primary transition-colors"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-3 border-l border-secondary-foreground/20 pl-6">
+        {socialLinks.map((link) => (
+          <a 
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith("mailto") ? "_self" : "_blank"}
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            className="text-secondary-foreground/60 hover:text-primary transition-colors duration-200"
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
+      </div>  
 
         {/* Mobile toggle */}
         <button
@@ -58,13 +99,12 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-secondary border-t border-secondary-foreground/10">
           <ul className="flex flex-col items-center gap-4 py-6">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a
+                <a 
                   href={l.href}
                   className="text-base font-medium text-secondary-foreground/80 hover:text-primary transition-colors"
                   onClick={() => setOpen(false)}
@@ -74,6 +114,22 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
+          {/* Iconos sociales en movil */}
+          <div className="flex items-center justify-center gap-5 pb-6 border-t border-secondary-foreground/10 pt-4">
+            {socialLinks.map((link) => (
+              <a 
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto") ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="text-secondary-foreground/60 hover:text-primary transition-colors duration-200"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </nav>
