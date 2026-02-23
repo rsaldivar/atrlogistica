@@ -72,8 +72,20 @@ const ContactSection = () => {
             </div>
           </div>
 
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              title="Ubicación STR Logística - Apodaca, Nuevo León"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57498.05878846988!2d-100.21361!3d25.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662ebc42e3c4273%3A0x65c4a18b98292b0!2sApodaca%2C%20N.L.%2C%20Mexico!5e0!3m2!1ses!2sus!4v1700000000000!5m2!1ses!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
           {/* Form */}
-          <form
+          <form hidden
             className="bg-card rounded-xl p-8 shadow-lg space-y-5"
             onSubmit={(e) => {
               e.preventDefault();
@@ -119,21 +131,9 @@ const ContactSection = () => {
         {/* Map */}
         <div
           ref={mapReveal.ref}
-          className={`mt-16 max-w-5xl mx-auto transition-all duration-700 ${mapReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`mt-8 max-w-5xl mx-auto transition-all duration-700 ${mapReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
         >
-          <div className="rounded-xl overflow-hidden shadow-lg">
-            <iframe
-              title="Ubicación STR Logística - Apodaca, Nuevo León"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57498.05878846988!2d-100.21361!3d25.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662ebc42e3c4273%3A0x65c4a18b98292b0!2sApodaca%2C%20N.L.%2C%20Mexico!5e0!3m2!1ses!2sus!4v1700000000000!5m2!1ses!2sus"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
         </div>
       </div>
     </section>

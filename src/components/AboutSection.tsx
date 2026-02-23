@@ -5,16 +5,47 @@ import about2 from "@/assets/about-2.jpg";
 import about3 from "@/assets/about-3.jpg";
 
 const features = [
-  // {
-  //   icon: Truck,
-  //   title: "Transporte Terrestre",
-  //   desc: "Flota propia de unidades modernas para carga completa y parcial a nivel nacional.",
-  // },
-  // {
-  //   icon: Package,
-  //   title: "Almacenaje",
-  //   desc: "Centros de distribución estratégicos con inventario en tiempo real.",
-  // },
+  {
+    icon: Truck,
+    title: "Nuestra Flota y Capacidades",
+    desc: `
+    Unidades Disponibles:
+      <ul class="space-y-1">
+        <li>✔ Caja seca 53'</li>
+        <li>✔ Refrigerada</li>
+        <li>✔ Plataforma</li>
+        <li>✔ Camiones 3.5 toneladas</li>
+        <li>✔ Camionetas 1.5 toneladas</li>
+         </ul>
+         <p class="mt-3 font-semibold"> Nos adaptamos a carga industrial, consumo masivo, acero, mercancía refrigerada y distribución urbana"</p>
+   
+         `,
+  },
+  {
+    icon: Package,
+    title: "Cobertura Operativa ",
+    desc: `
+      <b>Norte y Bajío:</b>
+            <ul class="space-y-1">
+      <li>- Chihuahua</li>
+      <li>- Monterrey</li>
+      <li>- Coahuila</li>
+      <li>- Tamaulipas</li>
+      <li>- Querétaro</li>
+      <li>- Guanajuato</li>
+      <li>- Guadalajara</li>
+      <li>- Ciudad</li> de México
+      </ul>
+<b>Zona Pacífico:</b>
+
+      <ul class="space-y-1">
+        <li>- Mazatlán</li>
+        <li>- Culiacán</li>
+        <li>- Navojoa</li>
+      </ul>
+      <p class="mt-3 font-semibold">Y expansión constante hacia nuevos corredores estratégicos.</p>
+    `
+  },
   {
     icon: Clock,
     title: "En ATR Logística garantizamos",
@@ -101,14 +132,14 @@ const AboutSection = () => {
         <div
           ref={cards.ref}
           id="servicios"
-          className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {features.map((f, i) => (
             <div
               key={f.title}
               className={`bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-700 group ${cards.visible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
                 }`}
               style={{ transitionDelay: cards.visible ? `${i * 150}ms` : "0ms" }}
             >
