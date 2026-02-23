@@ -5,25 +5,43 @@ import about2 from "@/assets/about-2.jpg";
 import about3 from "@/assets/about-3.jpg";
 
 const features = [
-  {
-    icon: Truck,
-    title: "Transporte Terrestre",
-    desc: "Flota propia de unidades modernas para carga completa y parcial a nivel nacional.",
-  },
-  {
-    icon: Package,
-    title: "Almacenaje",
-    desc: "Centros de distribución estratégicos con inventario en tiempo real.",
-  },
+  // {
+  //   icon: Truck,
+  //   title: "Transporte Terrestre",
+  //   desc: "Flota propia de unidades modernas para carga completa y parcial a nivel nacional.",
+  // },
+  // {
+  //   icon: Package,
+  //   title: "Almacenaje",
+  //   desc: "Centros de distribución estratégicos con inventario en tiempo real.",
+  // },
   {
     icon: Clock,
-    title: "Entregas a Tiempo",
-    desc: "Cumplimiento de tiempos de entrega con monitoreo GPS 24/7.",
+    title: "En ATR Logística garantizamos",
+    desc: `
+      <ul class="space-y-1">
+        <li>✔ Seguridad en cada trayecto</li>
+        <li>✔ Monitoreo y comunicación constante</li>
+        <li>✔ Puntualidad en citas de carga y descarga</li>
+        <li>✔ Evidencia inmediata de entrega (POD)</li>
+        <li>✔ Solución rápida ante cualquier incidencia</li>
+        <li class="font-semibold mt-2">No improvisamos. Operamos con disciplina.</li>
+      </ul>
+    `,
   },
   {
     icon: Shield,
-    title: "Seguridad Total",
-    desc: "Seguros de carga, rastreo satelital y protocolos de seguridad certificados.",
+    title: "¿Por Qué ATR Logística?",
+    desc: `
+      <ul class="space-y-1">
+        <li>✔ Capacidad nacional flexible</li>
+        <li>✔ Más de 50 aliados estratégicos</li>
+        <li>✔ Operación estructurada</li>
+        <li>✔ Comunicación clara</li>
+        <li>✔ Compromiso real con tiempos y mercancía</li>
+      </ul>
+      <p class="mt-3 font-semibold">Donde otros transportan... nosotros garantizamos.</p>
+    `,
   },
 ];
 
@@ -44,9 +62,8 @@ const AboutSection = () => {
         {/* Header */}
         <div
           ref={header.ref}
-          className={`text-center mb-16 transition-all duration-700 ${
-            header.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${header.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
             Quiénes Somos
@@ -62,9 +79,8 @@ const AboutSection = () => {
         {/* Gallery */}
         <div
           ref={gallery.ref}
-          className={`grid md:grid-cols-3 gap-4 mb-16 transition-all duration-700 ${
-            gallery.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`grid md:grid-cols-3 gap-4 mb-16 transition-all duration-700 ${gallery.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           {galleryImages.map((img, i) => (
             <div
@@ -85,23 +101,25 @@ const AboutSection = () => {
         <div
           ref={cards.ref}
           id="servicios"
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {features.map((f, i) => (
             <div
               key={f.title}
-              className={`bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-700 group ${
-                cards.visible
+              className={`bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-700 group ${cards.visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
-              }`}
+                }`}
               style={{ transitionDelay: cards.visible ? `${i * 150}ms` : "0ms" }}
             >
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
                 <f.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="text-lg font-bold text-foreground mb-2">{f.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
+              <div
+                className="text-muted-foreground text-sm leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: f.desc }}
+              />
             </div>
           ))}
         </div>

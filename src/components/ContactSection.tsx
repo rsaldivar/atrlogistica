@@ -11,9 +11,8 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div
           ref={header.ref}
-          className={`text-center mb-16 transition-all duration-700 ${
-            header.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${header.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
             Contáctanos
@@ -26,9 +25,8 @@ const ContactSection = () => {
 
         <div
           ref={content.ref}
-          className={`grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto transition-all duration-700 ${
-            content.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto transition-all duration-700 ${content.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           {/* Info */}
           <div className="space-y-8">
@@ -47,7 +45,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground mb-1">Teléfono</h3>
-                <p className="text-muted-foreground">+52 (81) 1234 5678</p>
+                <p className="text-muted-foreground">+52 (81) 2345 6789</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -56,7 +54,11 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground mb-1">Email</h3>
-                <p className="text-muted-foreground">contacto@atrlogistica.com</p>
+                <a href="mailto:atrlogisticsmx@gmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors" target="_blank"
+                >
+                  atrlogisticsmx@gmail.com
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -117,9 +119,8 @@ const ContactSection = () => {
         {/* Map */}
         <div
           ref={mapReveal.ref}
-          className={`mt-16 max-w-5xl mx-auto transition-all duration-700 ${
-            mapReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`mt-16 max-w-5xl mx-auto transition-all duration-700 ${mapReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <div className="rounded-xl overflow-hidden shadow-lg">
             <iframe
