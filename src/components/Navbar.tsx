@@ -29,7 +29,7 @@ const socialLinks = [
   },
   {
     icon: <FaEnvelope size={17} />,
-    href: "mailto:atrlogisticsmx@gmail.com",
+    href: "mailto:contacto@atrlogisticsmx.com",
     label: "Email",
   },
 ];

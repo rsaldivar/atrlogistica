@@ -54,7 +54,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground mb-1">Email</h3>
-                <a href="mailto:atrlogisticsmx@gmail.com"
+                <a href="mailto:contacto@atrlogisticsmx.com"
                   className="text-muted-foreground hover:text-primary transition-colors" target="_blank"
                 >
                   contacto@atrlogisticsmx.com
