@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Carlos Mendoza",
     company: "Grupo Industrial del Norte",
-    text: "STR Logística ha transformado nuestra cadena de suministro. Su compromiso con la puntualidad y seguridad es excepcional.",
+    text: "ATR Logística ha transformado nuestra cadena de suministro. Su compromiso con la puntualidad y seguridad es excepcional.",
     rating: 5,
   },
   {

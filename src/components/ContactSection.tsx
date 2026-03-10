@@ -45,7 +45,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground mb-1">Teléfono</h3>
-                <p className="text-muted-foreground">+52 (81) 2345 6789</p>
+                <p className="text-muted-foreground">+52 (81) 2018 8823</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -57,7 +57,7 @@ const ContactSection = () => {
                 <a href="mailto:atrlogisticsmx@gmail.com"
                   className="text-muted-foreground hover:text-primary transition-colors" target="_blank"
                 >
-                  atrlogisticsmx@gmail.com
+                  contacto@atrlogisticsmx.com
                 </a>
               </div>
             </div>
